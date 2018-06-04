@@ -1,0 +1,51 @@
+<div id="right-column">
+  <div id="sort-by-wrapper">
+    <span id="sort-by">
+      <ais-sort-by [items]="
+              [
+                {name: '28feb', label: 'İlgiye göre'},
+                {name: '28feb_price_asc', label: 'En düşük fiyat'},
+                {name: '28feb_price_desc', label: 'En yüksek fiyat'}          
+              ]
+            ">
+      </ais-sort-by>
+    </span>
+  </div>
+  <div id="stats">
+    <ais-stats></ais-stats>
+  </div>
+  <div id="active-filters"></div>
+  <div id="hits">
+    <ais-hits>
+      <ng-template let-hits="hits" let-results="results">
+        <div *ngIf="hits.length === 0" class="text-center">
+          <div id="no-results-message">
+            <p>Aramana uygun sonuç yok:
+              <em>"{{results.query}}"</em>.</p>
+            <a href="." class='clear-all'>Tekrar Dene</a>
+          </div>
+        </div>
+        <div *ngFor="let hit of hits">
+          <a [routerLink]="['/detail', 23]">
+            <div class="ais-hits--item">
+              <div class="hit">
+                <div class="hit-image">
+                  <img src="{{hit.Photo}}" alt="{{hit.Brand}}">
+                </div>
+                <div class="hit-content">
+                  <h3 class="hit-price">{{hit.Price}}</h3>
+                  <h2 class="hit-name">{{hit.Model}}</h2>
+                  <p class="hit-category-breadcrumb">{{hit.Fuel}} - {{hit.Transmission}} Vites - {{hit.FuelConsumption}}/100 km - {{hit.Hp}}HP</p>
+                  <p class="hit-description">{{hit.Name}}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </ng-template>
+    </ais-hits>
+  </div>
+  <div id="pagination">
+    <ais-pagination></ais-pagination>
+  </div>
+</div>
