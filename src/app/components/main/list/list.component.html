@@ -26,7 +26,7 @@
           </div>
         </div>
         <div *ngFor="let hit of hits">
-          <a [routerLink]="['/detail', 23]">
+          <a [routerLink]="['/detail', hit.objectID]">
             <div class="ais-hits--item">
               <div class="hit">
                 <div class="hit-image">
