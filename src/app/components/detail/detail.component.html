@@ -1,1 +1,91 @@
-{{car}}
+<body class="">
+    <div id="car-review">
+        <header>
+            <div class="hero-image hero-image-gradient hero-reviews hero-image-fullscreen-top" [ngStyle]="{'background-image': 'url('+ car?.Photo +')'}">
+                <div class="hero-image-container hero-image-container-bottom-aligned styleguide-hero-image-header">
+                    <h1 class="hero-metadata__title">{{car?.Name}}</h1>
+                    <div class="hero-metadata-sections-container">
+                        <div class="hero-metadata-section hero-metadata-section--right hero--hide-tablet-mobile">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-prices-container">
+                <div class="grid-container">
+                    <div class="review-prices-rrp">
+                        <div class="review-prices-rrp__label">
+                            Fiyatı
+                        </div>
+                        <div class="review-prices-avg-saving__value">
+                            {{car?.Price }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-toggle="sticky-header-placeholder" id="sticky-header-placeholder" style="display: none;"></div>
+            <div class="key-stats-container">
+                <div class="grid-container">
+                    <div class="stats-bar stats-bar--left-aligned">
+                        <div class="stats-bar-stat">
+                            <div class="stats-bar-stat__label stats-bar-stat__label--first">
+                                Marka
+                            </div>
+                            <div class="stats-bar-stat__value">
+                                <span class="price--no-wrap">{{ car?.Brand }}</span>
+                            </div>
+                        </div>
+                        <div class="stats-bar-stat">
+                            <div class="stats-bar-stat__label stats-bar-stat__label--first">
+                                Model
+                            </div>
+                            <div class="stats-bar-stat__value">
+                                <span class="price--no-wrap">{{ car?.Model }}</span>
+                            </div>
+                        </div>
+                        <div class="stats-bar-stat">
+                            <div class="stats-bar-stat__label stats-bar-stat__label--first">
+                                Yıl
+                            </div>
+                            <div class="stats-bar-stat__value">
+                                <span class="price--no-wrap">{{ car?.EndYear }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="key-stats-container">
+                <div class="grid-container">
+                    <div class="stats-bar stats-bar--left-aligned">
+                        <div class="stats-bar-stat">
+                            <div class="stats-bar-stat__label stats-bar-stat__label--first">
+                                Yakıt Tipi
+                            </div>
+                            <div class="stats-bar-stat__value">
+                                <span class="price--no-wrap">{{ car?.Fuel }}</span>
+                            </div>
+                        </div>
+                        <div class="stats-bar-stat">
+                            <div class="stats-bar-stat__label stats-bar-stat__label--first">
+                                Vites Tipi
+                            </div>
+                            <div class="stats-bar-stat__value">
+                                <span class="price--no-wrap">{{ car?.Transmission }}</span>
+                            </div>
+                        </div>
+                        <div class="stats-bar-stat">
+                            <div class="stats-bar-stat__label stats-bar-stat__label--first">
+                                Motor Gücü
+                            </div>
+                            <div class="stats-bar-stat__value">
+                                <span class="price--no-wrap">{{ car?.Hp }} HP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+    </div>
+</body>

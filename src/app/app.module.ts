@@ -11,6 +11,8 @@ import { ListComponent } from './components/main/list/list.component';
 import { FooterComponent } from './components/main/footer/footer.component';
 import { MainComponent } from './components/main/main.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { ListService } from './services/list.service';
+import { DetailService } from './services/detail.service';
 
 const routeConfig: Route[] = [
   {
@@ -39,7 +41,7 @@ const routeConfig: Route[] = [
     HttpClientModule,
     NgAisModule
   ],
-  providers: [],
+  providers: [ListService, DetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
